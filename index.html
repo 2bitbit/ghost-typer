@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost Typer</title>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+
+<body>
+  <div class="card">
+    <h1>👻 Ghost Typer</h1>
+
+    <div class="input-group">
+      <label>启动延迟 (秒)</label>
+      <input id="start-delay" type="number" value="1" placeholder="输入启动延迟秒数" />
+    </div>
+
+    <div class="input-group">
+      <label>打字间隔 (毫秒)</label>
+      <input id="type-delay" type="number" value="1" placeholder="输入打字间隔毫秒数" />
+    </div>
+
+    <button id="type-btn">开始模拟 (剪贴板)</button>
+    <pre id="statusMsg">就绪</pre>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
