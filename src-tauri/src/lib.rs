@@ -32,9 +32,22 @@ pub fn run() {
 
                             // 【立即通知前端】：任务开始了
                             // "typing-status" 是事件名，Payload 是个字符串，也可以是 JSON 对象
+                            // emit 时，直接发送Result，前端收到的是Json对象，我们要手动拆包，emit不同的事件。
                             let response = start_typing(app.clone(), 0, delay as u32);
-                            if let Err(e) = app.emit("shortcut-trigger", response) {
-                                eprintln!("事件发射失败: {:?}", e);
+                            match response {
+                                Ok(duration) => {
+                                    // ✅ 成功信道：只传数字，干净利落
+                                    if let Err(e) = app.emit("shortcut-trigger", duration) {
+                                        eprintln!("UI通知失败: {:?}", e);
+                                    }
+                                }
+                                Err(err_msg) => {
+                                    // ❌ 失败信道：只传字符串
+                                    eprintln!("任务启动失败: {}", err_msg);
+                                    if let Err(e) = app.emit("shortcut-error", err_msg) {
+                                        eprintln!("UI错误通知失败: {:?}", e);
+                                    }
+                                }
                             }
                         }
                     }

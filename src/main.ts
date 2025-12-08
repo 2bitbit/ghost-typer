@@ -37,10 +37,18 @@ window.addEventListener("DOMContentLoaded", async () => {
     els.typeBtn.addEventListener("click", handleBtnClick);
 
     // 3. 监听后端事件
+    // 🟢 专门处理快捷键成功的逻辑
     listen<number>("shortcut-trigger", (event) => {
-        uiManager.startCountdown(0, event.payload); // 快捷键触发: 启动延迟为0
+        console.log("🚀 快捷键启动成功，耗时:", event.payload);
+        uiManager.startCountdown(0, event.payload);// 快捷键触发: 启动延迟为0
     });
 
+    // 🔴 专门处理快捷键失败的逻辑
+    listen<string>("shortcut-error", (event) => {
+        console.error("💥 快捷键启动失败:", event.payload);
+        uiManager.showError(event.payload);
+    });
+    // 处理 typing结束 事件
     listen("typing-finished", () => {
         uiManager.reset();
     });
