@@ -49,13 +49,6 @@
 * **State Management**: `tauri-plugin-store` (本地 JSON 持久化)
 
 ## 📦 安装与运行 (Installation)
-
-### 前置要求
-请确保:
-- 你已安装 [Rust](https://www.rust-lang.org/tools/install) 和 [Node.js](https://nodejs.org/)。
-- 你不知道可以，或者懒得每次 F12 或 ctrl+shift+i 来费劲粘贴。
-
-### 安装
 点我 [下载](https://github.com/2bitbit/ghost-typer/releases/latest)
 
 ## 🎮 使用说明 (Usage)
