@@ -20,6 +20,10 @@
 
 <br />
 
+## 📸 演示 (Demo)
+
+![App Demo](assets/demo.gif)
+
 ## 📖 简介 (Introduction)
 
 **Ghost Typer** 是一个利用剪贴板内容的自动打字工具。与普通的“粘贴”操作不同，它利用底层驱动**模拟真实的物理键盘按键事件** (Key Press)，逐字输入内容。
@@ -37,9 +41,7 @@
 * 🎨 **现代化 UI**：提供清晰的倒计时动画与状态反馈 (基于 TypeScript + Vite)。
 * 💾 **配置持久化**：自动记忆你的延迟设置，下次打开即用。
 
-## 📸 演示 (Demo)
 
-![App Demo](assets/demo.gif)
 
 ## 🛠️ 技术栈 (Tech Stack)
 
